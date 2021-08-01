@@ -1,0 +1,38 @@
+decks:
+- name: devdeck.decks.single_page_deck_controller.SinglePageDeckController
+  serial_number: BL15K1B44842
+  settings:
+    controls:
+    - key: 0
+      name: devdeck.decks.volume_deck.VolumeDeck
+    - key: 1
+      name: devdeck.controls.clock_control.ClockControl
+    - key: 2
+      name: devdeck_slack.slack_deck.SlackDeck
+      settings:
+        api_key: 'your-api-key'
+        actions:
+          - action: online
+            key: 0
+          - action: away
+            key: 1
+          - action: status
+            key: 2
+            text: focus
+            emoji: ':red_circle:'
+          - action: status
+            key: 3
+            text: Lunch
+            emoji: ':cookie:'
+          - action: status
+            key: 4
+            text: Break
+            emoji: ':pause_button:'
+            until: tomorrow at 8am
+          - action: dnd
+            key: 5
+            duration: 60
+    - key: 3
+      name: devdeck.controls.mic_mute_control.MicMuteControl
+    - key: 4
+      name: devdeck.controls.sink_toggle_control.SinkToggleControl
